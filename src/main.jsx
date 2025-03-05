@@ -9,7 +9,9 @@ import About from "./pages/About.jsx";
 import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import Services from "./pages/Services.jsx";
-import LoginPage from "./pages/Login.jsx";
+import LoginPage from "./pages/login.jsx";
+// import LoginPage from "./pages/Login.jsx";
+
 
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
