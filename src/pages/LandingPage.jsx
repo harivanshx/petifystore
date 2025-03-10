@@ -6,7 +6,7 @@ const LandingPage = () => {
   
   <>
 
-    <Navbar></Navbar>
+    
     <div className="min-h-screen bg-gradient-to-r from-teal-400 to-cyan-600 flex items-center justify-center">
       <div className="text-center text-white p-8 max-w-3xl">
         <h1 className="text-6xl font-extrabold mb-6 drop-shadow-lg">Welcome to Petify</h1>

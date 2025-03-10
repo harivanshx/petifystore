@@ -9,7 +9,7 @@ import Home from './Home'
 const Services = () => {
   return (
 <>
-<Navbar/>
+
 <Hero/>
 {/* <Home/> */}
 <Footer/>

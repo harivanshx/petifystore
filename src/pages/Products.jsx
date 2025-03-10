@@ -7,7 +7,7 @@ import Brands from '../Components/Products/Brands'
 const Products = () => {
   return (
 <>
-    <Navbar/>
+    
     <Brands/>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
 

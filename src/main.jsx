@@ -10,11 +10,13 @@ import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import Services from "./pages/Services.jsx";
 import LoginPage from "./pages/login.jsx";
+import Navbar from "./Components/Global/Navbar.jsx";
 // import LoginPage from "./pages/Login.jsx";
 
 
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
+  <Navbar/>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/login" element={<LoginPage />} />

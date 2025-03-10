@@ -10,7 +10,7 @@ const Home = () => {
   return (
   <>
     
-    <Navbar />
+    
     <Hero/>
     <FeaturedProducts/>
     <Footer/>

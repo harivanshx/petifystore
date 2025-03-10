@@ -17,7 +17,7 @@ const LoginPage = () => {
 
   return (
     <>
-    <Navbar/>
+    
     <div className="flex items-center justify-center h-screen bg-amber-800">
       <form onSubmit={handleSubmit} className="space-y-4 p-6 bg-white shadow-lg rounded-2xl max-w-md">
         <input
