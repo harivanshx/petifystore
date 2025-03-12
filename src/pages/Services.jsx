@@ -11,7 +11,13 @@ const Services = () => {
 <>
 
 <Hero/>
-{/* <Home/> */}
+
+
+
+
+
+
+
 <Footer/>
 
 

@@ -11,6 +11,8 @@ import Products from "./pages/Products.jsx";
 import Services from "./pages/Services.jsx";
 import LoginPage from "./pages/login.jsx";
 import Navbar from "./Components/Global/Navbar.jsx";
+import Signup from "./pages/Signup.jsx";
+import Grooming from "./pages/Grooming.jsx";
 // import LoginPage from "./pages/Login.jsx";
 
 
@@ -25,6 +27,8 @@ ReactDOM.createRoot(root).render(
       <Route path="/about" element={<About />} />
       <Route path="/products" element={<Products />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/services/grooming" element={<Grooming />} />
+      <Route path="/signup" element={<Signup />} />
     </Routes>
   </BrowserRouter>
 );

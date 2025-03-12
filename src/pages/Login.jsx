@@ -1,50 +1,86 @@
-import { useState } from "react";
-import Navbar from "../Components/Global/Navbar";
+import React from "react";
+import { Button, Checkbox, Form, Input } from "antd";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const LoginPage = () => {
-  const [credentials, setCredentials] = useState({ username: "", password: "" });
+const onFinish = (values) => {
+  console.log("Success:", values);
+  toast.success("Login successful!");
+};
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCredentials({ ...credentials, [name]: value });
-  };
+const onFinishFailed = (errorInfo) => {
+  console.log("Failed:", errorInfo);
+  toast.error("Login failed! Please check your credentials.");
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Login Credentials:", credentials);
-    setCredentials({ username: "", password: "" }); // Clear input fields after login
-  };
-
+const Login = () => {
   return (
-    <>
-    
-    <div className="flex items-center justify-center h-screen bg-amber-800">
-      <form onSubmit={handleSubmit} className="space-y-4 p-6 bg-white shadow-lg rounded-2xl max-w-md">
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={credentials.username}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded-lg"
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={credentials.password}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded-lg"
-        />
-        <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
-          Log In 
-        </button>
-      </form>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-96">
+        <ToastContainer />
+        <Form
+          name="basic"
+          labelCol={{
+            span: 8,
+          }}
+          wrapperCol={{
+            span: 16,
+          }}
+          style={{
+            maxWidth: 600,
+          }}
+          initialValues={{
+            remember: true,
+          }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+        >
+          <Form.Item
+            label="Username"
+            name="username"
+            rules={[
+              {
+                required: true,
+                message: "Please input your username!",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            label="Password"
+            name="password"
+            rules={[
+              {
+                required: true,
+                message: "Please input your password!",
+              },
+            ]}
+          >
+            <Input.Password />
+          </Form.Item>
+
+          <Form.Item name="remember" valuePropName="checked" label={null}>
+            <Checkbox>Remember me</Checkbox>
+          </Form.Item>
+
+          <Form.Item label={null}>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+        <p className="text-sm text-center">
+          Dont Have and account{" "}
+          <a href="/signup" className="text-blue-600">
+            Signup
+          </a>
+        </p>
+      </div>
     </div>
-    </>
   );
 };
 
-export default LoginPage;
+export default Login;
