@@ -13,14 +13,25 @@ import LoginPage from "./pages/login.jsx";
 import Navbar from "./Components/Global/Navbar.jsx";
 import Signup from "./pages/Signup.jsx";
 import Grooming from "./pages/Grooming.jsx";
+// import LandingPage from "./pages/LandingPage.jsx";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import GoogleLogin from "./Components/Global/GoogleLogin.jsx";
 // import LoginPage from "./pages/Login.jsx";
+const GoogleWrapper = ()=>{
+  return (
+    <GoogleOAuthProvider ClientID = "722527548201-9nj83uo5ii4aahuvfmpauh0eicbbg4d5.apps.googleusercontent.com" >
+      <GoogleLogin/>
 
-
+    </GoogleOAuthProvider>
+  )
+}
+// 722527548201-9nj83uo5ii4aahuvfmpauh0eicbbg4d5.apps.googleusercontent.com
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
   <Navbar/>
     <Routes>
-      <Route path="/" element={<App />} />
+
+      <Route path="/" element={<GoogleWrapper/>} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/home" element={<Home />} />
 
@@ -32,3 +43,5 @@ ReactDOM.createRoot(root).render(
     </Routes>
   </BrowserRouter>
 );
+
+

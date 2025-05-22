@@ -5,8 +5,7 @@ function App() {
   return (
     <div>
   
-      
-Hello Bachooooo
+    
     </div>
   );
 }
